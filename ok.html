@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+<body>
+        <input type = "text" id = "hello">
+    <button id = "one">Click</button>
+    <button id ="clear">clear</button>
+    <div id = "image">
+      <img src="#">
+    </div>
+<script type="text/javascript">
+let scrape = ()=>{
+  let anime = hello.value;
+  let link = 'https://api.jikan.moe/v4/anime?q=';
+  link+=anime;
+  console.log(link);
+  let p = fetch(link);
+  p.then((response)=>{return response.json()}).then((data)=>{
+    console.log(data.data[0]);
+for(let i = 0;i<data.data.length;i++){
+  let img = document.createElement('img');
+  img.setAttribute('src',data.data[i].images.jpg.image_url);
+  image.appendChild(img);
+    }
+  })
+}
+one.addEventListener('click',scrape)
+clear.addEventListener('click',()=>{
+    image.innerHTML="<b>cleared</b>";
+})
+</script>
+</body>
+</html>
