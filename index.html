@@ -133,14 +133,46 @@ body .container .card .box .content a:hover {
   color: #000;
 }
 
+
+.inputs{
+  display:flex;
+}
+#hello{
+  border-top-style: none;
+  border-bottom-style: none;
+  border-left-style:none;
+  border-right-style:none;
+  background:gray;
+  border-radius:15px;
+  border-bottom-right-radius:0px;
+  border-top-right-radius:0px;
+  padding-left:20px;
+}
+#hello:focus{
+  outline: none;
+}
+.inputs button{
+  outline: none;
+  width:50px;
+  border:none;
+  background-color: #ACAEC5;
+  border-right:darkcyan;
+
+}
+#clear{
+  margin-left:10px;
+  border-radius:15px;
+}
     </style>
 
 
 </head>
 <body>
+  <div class="inputs">
         <input type = "text" id = "hello">
     <button id = "one">Click</button>
     <button id ="clear">clear</button>
+    </div>
     <div class ="container" id="container">
     </div>
   </div>
